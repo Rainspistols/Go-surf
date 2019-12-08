@@ -8,7 +8,7 @@ let gulp = require("gulp"),
   autoprefixer = require("gulp-autoprefixer");
 
 gulp.task("clean", async function() {
-  del.sync("dist");
+  del.sync("docs");
 });
 
 gulp.task("scss", function() {
@@ -63,15 +63,15 @@ gulp.task("browser-sync", function() {
 });
 
 gulp.task("export", function() {
-  let buildHtml = gulp.src("app/**/*.html").pipe(gulp.dest("dist"));
+  let buildHtml = gulp.src("app/**/*.html").pipe(gulp.dest("docs"));
 
-  let BuildCss = gulp.src("app/css/**/*.css").pipe(gulp.dest("dist/css"));
+  let BuildCss = gulp.src("app/css/**/*.css").pipe(gulp.dest("docs/css"));
 
-  let BuildJs = gulp.src("app/js/**/*.js").pipe(gulp.dest("dist/js"));
+  let BuildJs = gulp.src("app/js/**/*.js").pipe(gulp.dest("docs/js"));
 
-  let BuildFonts = gulp.src("app/fonts/**/*.*").pipe(gulp.dest("dist/fonts"));
+  let BuildFonts = gulp.src("app/fonts/**/*.*").pipe(gulp.dest("docs/fonts"));
 
-  let BuildImg = gulp.src("app/img/**/*.*").pipe(gulp.dest("dist/img"));
+  let BuildImg = gulp.src("app/img/**/*.*").pipe(gulp.dest("docs/img"));
 });
 
 gulp.task("watch", function() {
