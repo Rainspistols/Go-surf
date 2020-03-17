@@ -1,7 +1,7 @@
-@import "vars";
-@import "libs";
-@import "fonts";
-@import "global";
+@import 'vars';
+@import 'libs';
+@import 'fonts';
+@import 'global';
 
 .header {
   position: relative;
@@ -119,6 +119,29 @@
     }
   }
 }
+.menu-btn {
+  width: 60px;
+  height: 60px;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  border: 1px solid #fff;
+  position: absolute;
+  right: 20px;
+  top: 75px;
+  z-index: 20;
+  &__inner {
+    width: 40px;
+  }
+  &__line {
+    height: 5px;
+    background-color: $green;
+    + .menu-btn__line {
+      margin-top: 5px;
+    }
+  }
+}
 .header__date {
   font-weight: 800;
   font-size: 72px;
@@ -147,7 +170,7 @@
   padding-left: 19px;
   text-transform: capitalize;
   &::before {
-    content: "";
+    content: '';
     position: absolute;
     width: 11px;
     height: 13px;
@@ -216,9 +239,11 @@
   }
 }
 .surf-box {
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+  &__wrapper {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
   &__inner {
     min-height: 750px;
     background: rgba(#1c2121, 0.85);
@@ -274,6 +299,7 @@
   margin: 0 auto;
   .slick-list {
     min-height: 635px;
+    overflow: visible;
   }
   .slick-current {
     .slider-dots__content {
@@ -310,7 +336,7 @@
   margin-bottom: 8px;
   position: relative;
   &::before {
-    content: "";
+    content: '';
     position: absolute;
     background-color: $green;
     width: 80px;
@@ -332,6 +358,7 @@
   height: 24px;
   background-color: $green;
   border-radius: 50%;
+  box-shadow: 0px 0px 35px rgba(74, 246, 205, 0.837777);
 }
 .slider-dots__content {
   display: none;
@@ -343,17 +370,18 @@
   bottom: 35px;
   transform: translateX(-50%);
   &::before {
-    content: "";
+    content: '';
     position: absolute;
     width: 0;
     height: 0;
     border-bottom: 20px solid $green;
-    border-left: 11px solid transparent;
+    border-left: 12px solid transparent;
     border-right: 12px solid transparent;
     bottom: -20px;
     left: 50%;
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
+    width: 24px;
   }
 }
 .slider-dots {
@@ -375,7 +403,7 @@
   .slider-dots__circle {
     position: relative;
     &:before {
-      content: "";
+      content: '';
       position: absolute;
       background-image: url(../img/mini-marker.png);
       width: 14px;
@@ -413,7 +441,7 @@
     transform: translateX(-262px);
     &::before {
       left: auto;
-      right: 0;
+      right: -0.5px;
     }
   }
 }
@@ -615,7 +643,7 @@
     left: -400px;
     &::before {
       position: absolute;
-      content: "";
+      content: '';
       width: 80px;
       height: 1px;
       background-color: #fff;
@@ -665,7 +693,7 @@
   left: 40px;
   &::before {
     position: absolute;
-    content: "";
+    content: '';
     width: 80px;
     height: 1px;
     background-color: #fff;
@@ -694,4 +722,4 @@
   opacity: 0.5;
 }
 
-@import "media";
+@import 'media';
