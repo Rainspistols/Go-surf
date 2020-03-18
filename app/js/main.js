@@ -45,7 +45,7 @@ $(function() {
       {
         breakpoint: 720,
         settings: {
-          slidesToShow: 1,
+          slidesToShow: 1
         }
       },
       {
@@ -152,21 +152,6 @@ $(function() {
   $('.menu-btn').on('click', function() {
     $('.menu').toggleClass('active');
   });
+
+  new WOW().init();
 });
-
-let aurora = {
-  health: 150,
-  strength: 25,
-  xp: 0,
-  describe: function() {
-    console.log(
-      `${this} has ${this.health}, ${this.strength} as strength and ${this.xp} points`
-    );
-  }
-};
-
-aurora.health -= 20;
-aurora.strength += 10;
-aurora.xp += 15;
-
-aurora.describe();

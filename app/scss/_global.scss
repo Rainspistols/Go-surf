@@ -7,12 +7,14 @@ html {
   box-sizing: inherit;
 }
 body {
-  font-family: "Fira Sans", sans-serif;
+  font-family: 'Fira Sans', sans-serif;
   font-weight: 400;
   font-size: 16px;
   background-color: #171919;
   color: #fff;
   text-transform: uppercase;
+  min-width: 320px;
+  overflow-x: hidden;
 }
 a {
   display: inline-block;
@@ -40,7 +42,7 @@ li {
   display: inline-block;
   &::before {
     position: absolute;
-    content: "";
+    content: '';
     width: 80px;
     height: 1px;
     background-color: #fff;
@@ -58,7 +60,7 @@ li {
   display: inline-block;
   &::before {
     position: absolute;
-    content: "";
+    content: '';
     width: 80px;
     height: 1px;
     background-color: #fff;
@@ -68,12 +70,15 @@ li {
 }
 
 .title {
-  span {
+  div {
     font-weight: 800;
     font-size: 200px;
     color: rgba($color: #fff, $alpha: 0.02);
     position: relative;
     transform: translateX(-50px);
+    display: inline-block;
+  }
+  span {
     display: inline-block;
   }
   h3 {
@@ -84,7 +89,7 @@ li {
     top: 0;
     right: -5px;
     &::after {
-      content: "";
+      content: '';
       position: absolute;
       top: 0;
       right: 0;
@@ -128,7 +133,7 @@ li {
     margin-left: 19px;
     position: relative;
     &::before {
-      content: "";
+      content: '';
       position: absolute;
       width: 20px;
       height: 1px;
@@ -137,7 +142,7 @@ li {
       left: -10px;
     }
     &::after {
-      content: "";
+      content: '';
       position: absolute;
       background-image: url(../img/arrows-right.svg);
       width: 25px;
@@ -162,15 +167,13 @@ li {
   display: inline-block;
 }
 
-input[type=number]::-webkit-inner-spin-button,
-input[type=number]::-webkit-outer-spin-button
-{
+input[type='number']::-webkit-inner-spin-button,
+input[type='number']::-webkit-outer-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
 
-input[type=number]
-{
+input[type='number'] {
   -moz-appearance: textfield;
 }
 
